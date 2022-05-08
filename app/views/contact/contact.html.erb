@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/css/ol.css" type="text/css">
+    <style>
+        .map {
+            height: 450px;
+            width: 100%
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
+    <title>OpenLayers example</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row align-items-center">
+            <h1>Contact</h1>
+            <div class="col-md-6">
+                <div id="map" class="map"></div>
+                <script type="text/javascript">
+                    var map = new ol.Map({
+                        target: 'map',
+                        layers: [
+                        new ol.layer.Tile({
+                            source: new ol.source.OSM()
+                        })
+                        ],
+                        view: new ol.View({
+                            center: ol.proj.fromLonLat([53.27,9.05]),
+                            zoom: 2
+                        })
+                    });
+                </script>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-12 mb-md-0 mb-5">
+                    
+                    <form id="contact-form" name="contact-form" action="mail.php" method="POST">    
+                    
+                    <div class="row">  
+                        
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <label for="name" class="">Your name: </label>
+                                <input type="text" id="name" name="name" class="form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <label for="email" class="">Your email: </label>
+                                <input type="text" id="email" name="email" class="form-control">                                
+                            </div>
+                        </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form mb-0">
+                            <label for="subject" class="">Subject: </label>
+                            <input type="text" id="subject" name="subject" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                               
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="md-form">
+                            <label for="message">Your message: </label>
+                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+        </form>
+                            
+        <div class="text-center text-md-left">
+            <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
+        </div>
+
+        <div class="status"></div>
+
+        </div>
+        </div>
+        </div> 
+        </div>
+    </div>
+    
+</body>
+
+</html>
