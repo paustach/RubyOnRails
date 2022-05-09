@@ -8,6 +8,7 @@
   
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
   <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  
 </head>
 
 <div class="container">
@@ -23,14 +24,38 @@
       <li class="nav-item"><a href="/posts" class="nav-link">Discover Krakow</a></li>
       <li class="nav-item"><a href="/about" class="nav-link " aria-current="about">See the Apartment</a></li>
       <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+      
+      <% if user_signed_in? %>
+      <div>Signed in as... <%= current_user.email %>
+      (<%= link_to 'Sign out', destroy_user_session_path,
+      :method => :delete%>)
+      </div>
+      <% else %>
+      
+      <li class="nav-item nav-link">
+      <%= link_to 'Register', new_user_registration_path %>
+      </li>
+
+      <li class="nav-item nav-link">
+      <%= link_to 'Sign in', new_user_session_path %>
+      </li>
+      
+      <% end %>
+
     </ul>
   </header>
 </div>
 
+<div>
+
+</div>
+
 <body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
   <%= yield %>
-  <hr class="my-5">
-  
+</body>
+
   <footer class="bg-light text-center text-white sticky">
     <!-- Grid container -->
     <div class="container p-4 pb-0">
@@ -95,5 +120,5 @@
     </div>
     <!-- Copyright -->
   </footer>
-</body>
+
 </html>
