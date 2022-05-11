@@ -7,16 +7,21 @@
   <%= csp_meta_tag %>
 
   <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "style", "data-turbo-track": "reload" %>
   <%= javascript_include_tag "application", "data-turbo-track": "reload" %>
+  <%= favicon_link_tag asset_path('guide_hub_icon_cr-removebg.png') %>
 
 </head>
 
 <header>
+
 <% if user_signed_in? %>
 
-
-  <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
-    <a class="navbar-brand" href="/">Guide HUB</a>
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light navbar-custom bg-custom">
+    <a class="navbar-brand" href="/">
+      <img src="assets/guide_hub-removebg.png" width="80" height="80" alt="Logo">
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -33,13 +38,16 @@
       </ul>
     </div>
   </nav>
+</div>
 
 
 <% else %>
 
 <div class="container">
-  <nav class="navbar navbar-expand-lg navbar-custom bg-custom">
-    <a class="navbar-brand" href="/">Guide HUB</a>
+  <nav class="navbar navbar-expand-lg navbar-light navbar-custom bg-custom">
+    <a class="navbar-brand" href="/">
+      <img src="assets/guide_hub-removebg.png" width="80" height="80" alt="Logo">
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -47,7 +55,7 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         <li class="nav-item"><a href="/" class="nav-link" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="/about" class="nav-link " aria-current="about">About</a></li>
+        <li class="nav-item"><a href="/about" class="nav-link" aria-current="about">About</a></li>
         <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
         <li class="nav-item nav-link"><%= link_to 'Register', new_user_registration_path %></li>
         <li class="nav-item nav-link"><%= link_to 'Sign in', new_user_session_path %></li>
@@ -61,12 +69,12 @@
 
 <body>
 
-  <div class="container">
+<div class="container">
     <div class="row">
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <span class="notice"><%= notice %></span>
+      <span class="alert"><%= alert %></span>
     </div>
-  </div>
+</div>
 
   <%= yield %>
   
