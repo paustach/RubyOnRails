@@ -1,24 +1,32 @@
+/*
+color palette:
+#404245 (grey)
+#F0F1EF (white)
+#A44200 (earth)
+*/
+
 body, html {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://images.unsplash.com/photo-1606992894456-799462dacd65?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+    height: 100%;
+    background-color: #F0F1EF;
+}
+
+.navbar-custom {
+    background-color: #F0F1EF;
+}
+
+.hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("https://images.unsplash.com/photo-1520645521318-f03a712f0e67?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
 }
-
-.hero {
+.hero-text {
     text-align: left;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
-}
-
-.sticky{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 60px
 }
