@@ -2,7 +2,7 @@
 color palette:
 #404245 (grey)
 #F0F1EF (white)
-##638EA3 (blue)
+#638EA3 (blue)
 */
 
 body, html {
@@ -24,6 +24,12 @@ h4 {
 ul {
     list-style-type: none;
     letter-spacing: .1rem;
+}
+
+#posts {
+    align-items: center;
+    text-align: center;
+    padding: 50px;
 }
 
 /*--- BUTTONS & LINKS ---*/
@@ -105,4 +111,13 @@ ul {
         top: 50%;
         left: 50%;
     }
+}
+
+/*--- ABOUT ---*/
+
+.guide{
+    text-align: center;
+    justify-content: center;
+    align-items: center; 
+    padding: 0.8rem 0.8rem;
 }
